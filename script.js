@@ -44,7 +44,7 @@ function displayPhotos() {
 
     // put <img> inside <a>, then put both inside imageContainer Element
     item.appendChild(img);
-    imageContainer.displayPhotos(item);
+    imageContainer.appendChild(item);
   });
 }
 
@@ -54,6 +54,7 @@ async function getPhotos() {
     const response = await fetch(apiURL);
     photosArray = await response.json();
     console.log(photosArray);
+    displayPhotos();
   } catch (error) {}
 }
 
